@@ -5,27 +5,36 @@ export default function searchPokemonsById(pokemons) {
     $fragment = d.createDocumentFragment();
 
     d.addEventListener("click", e => {
-        if (e.target.matches("#button-bar > *.search-pokemons")) getDataPokemons(e.target.outerText);
+        if (e.target.matches(".search-pokemons")) getDataPokemons(e.target.innerText);
     });
 
     async function getDataPokemons(type) {
-        $fragment.innerHTML = "";
-        $pokemons.innerHTML = "";
-
         try {
             let res = await fetch(`https://pokeapi.co/api/v2/type/${type}/`),
             json = await res.json();
 
             if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
-            json.pokemon.forEach((el) => getPokemonInParticular(el.pokemon.url));
+            $fragment.innerHTML = "";
+            $pokemons.innerHTML = "";
+
+            json.pokemon.forEach(async (el) => getPokemonInParticular(el.pokemon.url));
 
             $pokemons.appendChild($fragment);
+
+            setTimeout(() => {
+                $fragment.innerHTML = "";
+                $pokemons.innerHTML = "";
+
+                json.pokemon.forEach(async (el) => getPokemonInParticular(el.pokemon.url));
+
+                $pokemons.appendChild($fragment);
+            }, 1000);
         } catch (err) {
             let message = err.statusText || "Ocurrió un error";
             $pokemons.innerHTML = `Error ${err.status}: ${message}`;
         } finally {
-            console.log("Esto se ejecutará independiente del try... catch")
+            console.log("Esto se ejecutará independiente del try... catch");
         }
     }
 
@@ -73,7 +82,7 @@ export default function searchPokemonsById(pokemons) {
             let message = err.statusText || "Ocurrió un error";
             $pokemons.innerHTML = `Error ${err.status}: ${message}`;
         } finally {
-            console.log("Esto se ejecutará independiente del try... catch")
+            console.log("Esto se ejecutará independiente del try... catch");
         }
     }
 }
