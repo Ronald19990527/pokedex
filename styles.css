@@ -210,3 +210,9 @@ li {
     margin-top: 1rem;
     min-height: 4rem;
 }
+
+.main > section:last-child > img {
+    width: 4rem;
+    height: 4rem;
+    margin: auto;
+}

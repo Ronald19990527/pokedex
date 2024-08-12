@@ -10,6 +10,7 @@ export default function searchPokemonsById(pokemons) {
 
     async function getDataPokemons(type) {
         try {
+            const $loader = d.createElement("img");
             let res = await fetch(`https://pokeapi.co/api/v2/type/${type}/`),
             json = await res.json();
 
@@ -20,7 +21,14 @@ export default function searchPokemonsById(pokemons) {
 
             json.pokemon.forEach(async (el) => getPokemonInParticular(el.pokemon.url));
 
+            $loader.setAttribute("src", "oval.svg");
+            $loader.setAttribute("alt", "loader");
+
             $pokemons.appendChild($fragment);
+
+            $pokemons.innerHTML = "";
+
+            $pokemons.appendChild($loader);
 
             setTimeout(() => {
                 $fragment.innerHTML = "";
