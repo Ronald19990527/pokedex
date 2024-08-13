@@ -1,4 +1,7 @@
 import generatePokemonOptionsButtonBar from "./generate-pokemon-options-button-bar.js";
+import pokemonByType from "./pokemon-by-type.js";
+import pokemonSearch from "./pokemon-search.js";
+import searchPokemonsByIdOrName from "./search-pokemons-by-id-or-name.js";
 import searchPokemonsById from "./search-pokemons-by-id.js";
 
 const d = document;
@@ -47,4 +50,6 @@ d.addEventListener("DOMContentLoaded", () => {
         }
     ]);
     searchPokemonsById(".pokemons");
+    pokemonByType("pokemon-by-type", "button-bar", ".pokemons");
+    pokemonSearch("pokemon-search", "button-bar", ".pokemons");
 });

@@ -6,6 +6,8 @@ export default function generatePokemonOptionsButtonBar(buttonBar, buttonStyles)
 
     $buttonBar.innerHTML = "";
 
+    if (!$buttonBar.classList.contains("cg-1-3-rem")) $buttonBar.classList.add("cg-1-3-rem")
+
     async function getDataTypesPokemons() {
         try {
             let res = await fetch("https://pokeapi.co/api/v2/type/"),

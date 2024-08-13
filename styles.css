@@ -38,6 +38,8 @@ html {
 }
 
 body {
+    background-image: url(anime-art-fon-tekstura-pokemon.webp);
+    background-size: contain;
     margin: 0 auto;
     max-width: 60rem;
 }
@@ -110,6 +112,11 @@ li {
     align-items: center;
 }
 
+/* Background Color */
+.bg-color-white {
+    background-color: var(--white-color);
+}
+
 /* Border Sections */
 .border-sections {
     border: thin solid var(--black-alpha-color);
@@ -174,6 +181,12 @@ li {
     padding: 0.5rem 0;
 }
 
+/* Padding Y 1rem */
+.pd-y-1rem {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 /* Row Gap 0.2rem */
 .rg-0-2-rem {
     row-gap: 0.2rem;
@@ -204,6 +217,26 @@ li {
 .main > section:first-child {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
+}
+
+.main > section:first-child > button {
+    flex-basis: 4rem;
+    padding: 1rem 0;
+}
+
+.main > section:first-child > button.search {
+    border: thin solid var(--black-color);
+    color: var(--black-alpha-second-color);
+    cursor: pointer;
+}
+
+.main > section:first-child > input[type="text"] {
+    flex-grow: 1;
+    outline: none;
+}
+
+.main > section:first-child > input[type="text"]:focus {
+    background-color: var(--aquamarine-color);
 }
 
 .main > section:last-child {
