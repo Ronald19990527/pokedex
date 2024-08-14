@@ -112,7 +112,7 @@ li {
     align-items: center;
 }
 
-/* Background Color */
+/* Background Color White */
 .bg-color-white {
     background-color: var(--white-color);
 }
@@ -190,6 +190,12 @@ li {
 /* Row Gap 0.2rem */
 .rg-0-2-rem {
     row-gap: 0.2rem;
+}
+
+/* Width and Height Max */
+.w-h-max {
+    height: auto;
+    width: 100%;
 }
 
 /* **********Own Styles********** */
