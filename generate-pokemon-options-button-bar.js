@@ -36,7 +36,6 @@ export default function generatePokemonOptionsButtonBar(buttonBar, buttonStyles)
             let message = err.statusText || "Ocurrió un error";
             $buttonBar.innerHTML = `Error ${err.status}: ${message}`;
         } finally {
-            console.log("Esto se ejecutará independiente del try... catch")
         }
     }
 

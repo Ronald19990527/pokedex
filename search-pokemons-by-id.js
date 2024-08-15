@@ -41,10 +41,13 @@ export default function searchPokemonsById(pokemons) {
                 $pokemons.appendChild($fragment);
             }, 1000);
         } catch (err) {
-            let message = err.statusText || "Ocurrió un error";
-            $pokemons.innerHTML = `Error ${err.status}: ${message}`;
+            $pokemons.innerHTML = `
+                <article style="background-color: var(--black-color); color: var(--white-color); text-align: center;">
+                    <h2><i>Not found pokemon with these specifications</i></h2>
+                    <img alt="Not found pokemon" class="w-h-max" src="adesivi-poke-ball---pokemon.jpg">
+                </article>
+            `;
         } finally {
-            console.log("Esto se ejecutará independiente del try... catch");
         }
     }
 
@@ -88,10 +91,13 @@ export default function searchPokemonsById(pokemons) {
 
             $fragment.appendChild($card);
         } catch (err) {
-            let message = err.statusText || "Ocurrió un error";
-            $pokemons.innerHTML = `Error ${err.status}: ${message}`;
+            $pokemons.innerHTML = `
+                <article style="background-color: var(--black-color); color: var(--white-color); text-align: center;">
+                    <h2><i>Not found pokemon with these specifications</i></h2>
+                    <img alt="Not found pokemon" class="w-h-max" src="adesivi-poke-ball---pokemon.jpg">
+                </article>
+            `;
         } finally {
-            console.log("Esto se ejecutará independiente del try... catch");
         }
     }
 }

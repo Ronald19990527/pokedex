@@ -18,6 +18,7 @@
     --red-alpha-color: #ea4242e6;
     --white-color: #fff;
     --white-alpha-color: rgba(255, 255, 255, 0.902);
+    --white-alpha-second-color: rgba(255, 255, 255, 0.202);
     /* Font Family */
     --font-family: "Raleway", sans-serif;
 }
@@ -112,9 +113,33 @@ li {
     align-items: center;
 }
 
+/* Background Color Blue */
+.bg-color-blue {
+    background-color: var(--blue-color);
+}
+
+/* Background Color Gray */
+.bg-color-gray {
+    background-color: var(--gray-color);
+}
+
 /* Background Color White */
 .bg-color-white {
     background-color: var(--white-color);
+}
+
+/* Background Color White Alpha */
+.bg-color-white-alpha-second {
+    background-color: var(--white-alpha-second-color);
+}
+
+/* Border Aquamarine */
+.border-aquamarine {
+    border: 0.15rem solid var(--aquamarine-color);
+}
+
+.border-radios-3rem {
+    border-radius: 3rem;
 }
 
 /* Border Sections */
@@ -127,6 +152,26 @@ li {
     column-gap: 1.3rem;
 }
 
+/* Color Gray */
+.color-gray {
+    color: var(--gray-color);
+}
+
+/* Color white */
+.color-white {
+    color: var(--white-color);
+}
+
+/* Max Width 15rem */
+.max-width-15rem {
+    max-width: 15rem;
+}
+
+/* Flex Basis 60% */
+.fb-60-percent {
+    flex-basis: 60%;
+}
+
 /* Flex Column Start */
 .flex-column-start {
     display: flex;
@@ -134,11 +179,21 @@ li {
     justify-content: flex-start;
 }
 
+/* Flex Grow 1 */
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
 /* Flex Row Start */
 .flex-row-start {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+}
+
+/* Justify Content Center */
+.justify-center {
+    justify-content: center;
 }
 
 /* Margin Bottom 1rem */
@@ -151,9 +206,25 @@ li {
     margin-top: 1rem;
 }
 
+/* Margin Top 1.5rem */
+.mg-top-1-5rem {
+    margin-top: 1.5rem;
+}
+
 /* Margin X 1rem */
 .mg-x-1rem {
     margin: 0 1rem;
+}
+
+/* Margin Y 0.5rem */
+.mg-y-0-5rem {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Paddind 0.1rem */
+.pd-0-1rem {
+    padding: 0.1rem;
 }
 
 /* Paddind 0.5rem */
@@ -248,6 +319,11 @@ li {
 .main > section:last-child {
     margin-top: 1rem;
     min-height: 4rem;
+}
+
+.main > section:last-child > .pokemon-card {
+    margin: 0 auto;
+    width: 80%;
 }
 
 .main > section:last-child > img {
