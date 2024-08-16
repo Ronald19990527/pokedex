@@ -14,7 +14,7 @@ export default function searchPokemonsById(pokemons) {
             let res = await fetch(`https://pokeapi.co/api/v2/type/${type}/`),
             json = await res.json();
 
-            if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            if (!res.ok) throw {};
 
             if (!$pokemons.classList.contains("flex-row-start")) $pokemons.classList.add("flex-row-start");
 
@@ -41,6 +41,8 @@ export default function searchPokemonsById(pokemons) {
                 $pokemons.appendChild($fragment);
             }, 1000);
         } catch (err) {
+            $pokemons.classList.remove("flex-row-start");
+
             $pokemons.innerHTML = `
                 <article style="background-color: var(--black-color); color: var(--white-color); text-align: center;">
                     <h2><i>Not found pokemon with these specifications</i></h2>

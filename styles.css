@@ -45,6 +45,10 @@ body {
     max-width: 60rem;
 }
 
+button:focus {
+    border: medium solid var(--green-color);
+}
+
 img {
     width: 100%;
     height: auto;

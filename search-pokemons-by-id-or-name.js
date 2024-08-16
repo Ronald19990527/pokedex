@@ -5,7 +5,7 @@ export default function searchPokemonsByIdOrName(writeNameId, search, pokemons) 
     $search = d.getElementById(search),
     $pokemons = d.querySelector(pokemons);
 
-    $search.addEventListener("click", () => {
+    const searchPokemon = function() {
         $pokemons.classList.remove("flex-row-start");
 
         if ($writeNameId.value !== "") getDataPokemon($writeNameId.value);
@@ -17,6 +17,14 @@ export default function searchPokemonsByIdOrName(writeNameId, search, pokemons) 
                 </article>
             `;
         }
+    }
+
+    d.addEventListener("keydown", (e) => {
+        if (e.code === "Enter") searchPokemon();
+    });
+
+    $search.addEventListener("click", () => {
+        searchPokemon();
     });
 
     async function getDataPokemon(pokemon) {
