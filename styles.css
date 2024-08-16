@@ -71,6 +71,12 @@ li {
     background-color: var(--background-hover-color);
 }
 
+/* Button Play */
+.button-play {
+    border: none;
+    cursor: pointer;
+}
+
 /* Card */
 .card {
     border: thin solid var(--black-alpha-color);
@@ -138,6 +144,12 @@ li {
     border: 0.15rem solid var(--aquamarine-color);
 }
 
+/* Border Radius 0.5rem */
+.border-radios-0-5rem {
+    border-radius: 0.5rem;
+}
+
+/* Border Radius 3rem */
 .border-radios-3rem {
     border-radius: 3rem;
 }
@@ -281,6 +293,7 @@ li {
 }
 
 .main {
+    min-height: 100vh;
     padding: 0 1rem;
 }
 
@@ -330,4 +343,14 @@ li {
     width: 4rem;
     height: 4rem;
     margin: auto;
+}
+
+.footer {
+    background-color: var(--blue-alpha-color);
+    text-align: center;
+}
+
+.footer > a {
+    color: var(--white-color);
+    text-decoration: none;
 }
