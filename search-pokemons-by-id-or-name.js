@@ -61,7 +61,6 @@ export default function searchPokemonsByIdOrName(writeNameId, search, pokemons) 
                                         </svg>
                                         <small class="color-white">Play</small>
                                     </button>
-                                    <audio src=${json.cries.latest ? json.cries.latest : json.cries.latest.legacy}></audio>
                                 </div>
                             </div>
                         </div>
@@ -69,8 +68,10 @@ export default function searchPokemonsByIdOrName(writeNameId, search, pokemons) 
                 </article>
             `;
 
+            let pokemonSound = new Audio(json.cries.latest ? json.cries.latest : json.cries.latest.legacy);
+
             d.querySelector(".button-play").addEventListener("click", () => {
-                d.querySelector("audio").play();
+                pokemonSound.play();
             });
         } catch (err) {
             $pokemons.innerHTML = `
