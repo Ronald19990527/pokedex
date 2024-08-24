@@ -1,3 +1,5 @@
+import selectPokemonsByCursors from "./select-pokemons-by-cursors.js";
+
 const d = document;
 
 export default function generatePokemonOptionsButtonBar(buttonBar, buttonStyles) {
@@ -32,6 +34,8 @@ export default function generatePokemonOptionsButtonBar(buttonBar, buttonStyles)
             });
 
             $buttonBar.appendChild($fragment);
+
+            selectPokemonsByCursors(d.querySelectorAll(".search-pokemons"));
         } catch (err) {
             let message = err.statusText || "Ocurrió un error";
             $buttonBar.innerHTML = `Error ${err.status}: ${message}`;

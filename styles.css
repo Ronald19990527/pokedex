@@ -1,6 +1,7 @@
 /* **********Custom Properties CSS********** */
 :root {
     /* Colors */
+    --active-color: #68db09;
     --aquamarine-color: #04ead8;
     --aquamarine-alpha-color: #04ead8e6;
     --black-color: #000;
@@ -43,10 +44,6 @@ body {
     background-size: contain;
     margin: 0 auto;
     max-width: 60rem;
-}
-
-button:focus {
-    border: medium solid var(--green-color);
 }
 
 img {
@@ -118,6 +115,11 @@ li {
 }
 
 /* **********Utilities********** */
+/* Active */
+.active {
+    border: medium solid var(--active-color);
+}
+
 /* Align Items Center */
 .align-items-center {
     align-items: center;
