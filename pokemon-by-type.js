@@ -8,6 +8,10 @@ export default function pokemonByType(pokemonByType, buttonBar, pokemons) {
     $pokemons = d.querySelector(pokemons);
 
     $pokemonByType.addEventListener("click", () => {
+        d.getElementById("pokemon-by-type").classList.add("active");
+        d.getElementById("primitive-pokemon-by-type").classList.remove("active");
+        d.getElementById("pokemon-search").classList.remove("active");
+
         $buttonBar.innerHTML = "";
 
         $pokemons.innerHTML = "";

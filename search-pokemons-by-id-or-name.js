@@ -5,10 +5,14 @@ export default function searchPokemonsByIdOrName(writeNameId, search, pokemons) 
     $search = d.getElementById(search),
     $pokemons = d.querySelector(pokemons);
 
+    d.getElementById("pokemon-by-type").classList.remove("active");
+    d.getElementById("primitive-pokemon-by-type").classList.remove("active");
+    d.getElementById("pokemon-search").classList.add("active");
+
     const searchPokemon = function() {
         $pokemons.classList.remove("flex-row-start");
 
-        if ($writeNameId.value !== "") getDataPokemon($writeNameId.value);
+        if ($writeNameId.value !== "") getDataPokemon($writeNameId.value.replaceAll(" ", ""));
         else {
             $pokemons.innerHTML = `
                 <article style="background-color: var(--black-color); color: var(--white-color); text-align: center;">

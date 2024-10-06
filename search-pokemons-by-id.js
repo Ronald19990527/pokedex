@@ -5,13 +5,13 @@ export default function searchPokemonsById(pokemons) {
     $fragment = d.createDocumentFragment();
 
     d.addEventListener("click", e => {
-        if (e.target.matches(".search-pokemons")) getDataPokemons(e.target.innerText);
+        if (e.target.matches(".search-pokemons") && d.getElementById("pokemon-by-type").classList.contains("active")) getDataPokemons(e.target.innerText);
     });
 
     d.addEventListener("keydown", e => {
         if (e.key === "Enter")
             d.querySelectorAll(".search-pokemons").forEach(type => {
-                if (type.classList.contains("active")) getDataPokemons(type.innerText);
+                if (type.classList.contains("active")  && d.getElementById("pokemon-by-type").classList.contains("active")) getDataPokemons(type.innerText);
             });
     })
 
@@ -74,8 +74,7 @@ export default function searchPokemonsById(pokemons) {
             $abilitiesList = d.createElement("ul"),
             $buttonAudio = d.createElement("button");
 
-            if (json.sprites.other.home.front_default) $image.setAttribute("src", json.sprites.other.home.front_default);
-            else $image.setAttribute("src", "adesivi-poke-ball---pokemon.jpg");
+            json.sprites.other.home.front_default ? $image.setAttribute("src", json.sprites.other.home.front_default) : $image.setAttribute("src", "adesivi-poke-ball---pokemon.jpg");
             $pokemonName.classList.add("mg-bottom-1rem");
             $pokemonName.classList.add("pd-x-0-5rem");
             $abilities.classList.add("mg-bottom-1rem");
@@ -115,6 +114,8 @@ export default function searchPokemonsById(pokemons) {
                 pokemonSound.play();
             });
         } catch (err) {
+            $pokemons.classList.remove("flex-row-start");
+
             $pokemons.innerHTML = `
                 <article style="background-color: var(--black-color); color: var(--white-color); text-align: center;">
                     <h2><i>Not found pokemon with these specifications</i></h2>
